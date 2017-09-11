@@ -1,0 +1,126 @@
+﻿/*Media Min Width Style*/
+@media #{$min-lg} {
+
+}
+
+@media #{$min-md} {
+
+}
+
+@media #{$min-sm} {
+    .btn-wide {
+        padding-left: 30px!important;
+        padding-right: 30px!important;
+    }
+    .inline{
+        display:inline!important;
+    }
+    .inline-block{
+        display:inline-block!important;
+    }
+    .block{
+        display:block!important;
+    }
+    .pull-none{
+        float:none!important;
+    }
+}
+
+@media #{$min-xs} {
+
+}
+
+/*Media Max Width Style*/
+@media (max-width:1500px){
+    .sidenav-content.active-menu{
+        .main-container{
+            width:inherit!important;
+        }
+    }
+}
+
+@media #{$max-lg} {
+
+}
+
+@media #{$max-md} {
+
+}
+
+@media #{$max-sm} {
+    .sidenav-content.active-menu {
+         margin-left: inherit; 
+    }
+    .top-menu .leftSideBtn.active {
+        margin-left: 285px;
+        position: absolute;
+        top: 0;
+    }
+}
+
+@media #{$max-1260} {
+    .smart-city-management-selected-items-wrapper {
+        width: 100%;
+    }
+}
+
+@media #{$max-767} {
+    .main-menu{
+        float: left;
+        width: 100%;
+        position: relative;
+    }
+    .header .pull-none.menu li a{
+        text-align:left;
+    }
+}
+@media #{$max-767} and (min-width:500px) {
+    .selected-item-panel{
+        &:before{
+            top: -27px;
+            border-top: 65px solid transparent;
+            border-bottom: 65px solid transparent;
+            border-left: 65px solid #2962FF;
+        }
+        &:after{
+            content: " ";
+            width: 100%;
+            height: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+        .title{
+            font-weight:bold;
+        }
+        .content{
+            font-weight:400;
+        }
+        .icon i{
+            margin-top: 6px;
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+            font-size: 17px;
+        }
+    }
+}
+@media (max-width: 499px) {
+    .selected-item-panel{
+        &:before{
+            display:none;
+        }
+        &:after{
+            
+        }
+        
+        .icon{
+            display:none;
+        }
+    }
+}
+
+@media #{$max-xs} {
+
+}

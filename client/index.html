@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/">
+    <title>Scaffold</title>
+    <meta name="description" content="">
+    <meta content="" name="author" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+</head>
+<body>
+
+    <!-- build:css(client) app/vendor.css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.min.css" />
+
+    <!-- endbuild -->
+
+    <!-- build:css({.tmp,client}) app/app.css -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!-- endbuild -->
+
+    <!-- App Content -->
+    <div ncy-breadcrumb class="breadcrumbs hidden"></div>
+
+    <div class="main-wrapper" ui-view=""></div>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- build:js(client) app/vendor.js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/lodash/dist/lodash.js"></script>
+    <script src="bower_components/restangular/dist/restangular.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/angular-moment/angular-moment.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+    <script src="bower_components/underscore/underscore-min.js"></script>
+    <script src="bower_components/is_js/is.js"></script>
+    <script src="bower_components/angular-base64/angular-base64.min.js"></script>
+    <script src="bower_components/angular-breadcrumb/dist/angular-breadcrumb.min.js"></script>
+
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,client}) app/app.js -->
+    <script src="app/app.js"></script>
+    <script src="app/app_init.js"></script>
+
+    <!-- Helpers, Common Modules, Directives, Services and Filters -->
+
+    <!-- Helpers -->
+    <script src="components/helpers/helpers.date-time-filters.js"></script>
+    <script src="components/helpers/helpers.dummy-data.js"></script>
+    <script src="components/helpers/helpers.method-sharing.js"></script>
+
+    <!-- Common Modules -->
+    <script src="components/services/auth/auth.service.js"></script>
+    <script src="components/services/public-api/public-api.service.js"></script>
+    <script src="components/directives/growl/growl.js"></script>
+    <script src="components/notificator/notificator.service.js"></script>
+    <script src="components/format-checker/format-checker.service.js"></script>
+    <script src="components/directives/loader/loading-layer.directive.js"></script>
+    <script src="components/directives/loader/loading-button.directive.js"></script>
+
+    <!-- Directives and Directive's Controller -->
+
+    <!-- Widget Tools -->
+
+    <!-- Filters -->
+    <script src="components/filters/truncate/truncate.filter.js"></script>
+    <script src="components/filters/bytes/bytes.filter.js"></script>
+    <script src="components/filters/startFrom/start-from.filter.js"></script>
+    <script src="components/filters/context/unsafe-html.filter.js"></script>
+
+    <!-- Routes and Controllers -->
+
+    <!-- main -->
+    <script src="app/main/index.js"></script>
+    <script src="app/main/main.controller.js"></script>
+
+    <!-- dashboard -->
+    <script src="app/main/dashboard/index.js"></script>
+    <script src="app/main/dashboard/dashboard.controller.js"></script>
+
+
+    <!-- Login, signup, change password, reset password, forgot-->
+    <script src="app/registration/index.js"></script>
+    <script src="app/registration/registration.controller.js"></script>
+    <script src="app/registration/login/login.controller.js"></script>
+    <script src="app/registration/signup/singup.controller.js"></script>
+    <script src="app/registration/change-password/change-password.controller.js"></script>
+    <script src="app/registration/forgot/forgot.controller.js"></script>
+
+    <!-- Others ==> token expired, errors, lock -->
+    <script src="app/others/index.js"></script>
+    <script src="app/others/others.controller.js"></script>
+    <script src="app/others/token/token-expired.controller.js"></script>
+    <script src="app/others/errors/errors.controller.js"></script>
+    <script src="app/others/user-locked/user-locked.controller.js"></script>
+
+    <!-- Nav -->
+    <script src="components/menu/menu.service.js"></script>
+    <script src="components/nav/top-nav-bar/top-nav-bar.controller.js"></script>
+    <script src="components/nav/left-nav-bar/left-nav-bar.controller.js"></script>
+    <script src="components/nav/left-nav-bar/left-nav-bar-directive.js"></script>
+
+    <!-- endbuild -->
+
+
+</body>
+</html>

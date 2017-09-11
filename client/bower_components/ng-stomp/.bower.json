@@ -1,0 +1,35 @@
+{
+  "name": "ng-stomp",
+  "version": "0.3.0",
+  "homepage": "https://github.com/beevelop/ng-stomp",
+  "authors": [
+    "Maik Hummel <m@ikhummel.com>"
+  ],
+  "description": "STOMP for AngularJS",
+  "main": "src/ng-stomp.js",
+  "keywords": [
+    "STOMP",
+    "websockets"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "sockjs-client": "1.1.1",
+    "stomp-websocket": "2.3.4"
+  },
+  "_release": "0.3.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.3.0",
+    "commit": "f82bb7dc91f71b2dcd043c28b6e788b28455c6d2"
+  },
+  "_source": "https://github.com/beevelop/angular-stomp.git",
+  "_target": "^0.3.0",
+  "_originalSource": "ng-stomp"
+}

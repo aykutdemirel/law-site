@@ -1,0 +1,53 @@
+
+<form role="form" novalidate name="form" class="form form-signin" ng-submit="vm.login(form)">
+    <div class="form-group has-error" ng-show="vm.error">
+        <div class="form__meta">
+            <span id="credentials-invalid-error">Geçersiz kullanıcı adı veya şifre.</span>
+        </div>
+    </div>
+
+    <div ng-if="vm.domains.length>0" class="form-group row" ng-class="{'has-error': form.domainRef.$invalid && (form.$submitted || form.domainRef.$dirty)}">
+        <div class="col-sm-12">
+            <ui-select name="domainRef" theme="bootstrap" required ng-model="vm.credentials.body.domainRef">
+                <ui-select-match placeholder="Domain">{{$select.selected.name}}</ui-select-match>
+                <ui-select-choices repeat="domain.id as domain in vm.domains | filter: $select.search">
+                    <small ng-bind-html="domain.name | highlight: $select.search"></small>
+                </ui-select-choices>
+            </ui-select>
+            <!--<div class="form-meta" ng-show="(form.$submitted || form.domainRef.$dirty) && form.domainRef.$error.required">-->
+                <!--<span ng-show="form.domainRef.$error.required">Domain gerekli.</span>-->
+            <!--</div>-->
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': form.username.$error.required && (form.$submitted || form.username.$dirty)}">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-user fa-fw" aria-hidden="true"></i></span>
+            <input type="text" id="username" name="username" placeholder="Kullanıcı Adı" class="form__input form-control" autofocus required ng-model="vm.credentials.body.username" ng-change="vm.resetError()">
+        </div>
+        <div class="form__meta" ng-show="(form.$submitted || form.username.$dirty) && form.username.$error.required">
+            <span id="email-required-error" ng-show="form.username.$error.required">Kullanıcı Adı alanını boş bırakmayınız.</span>
+        </div>
+    </div>
+    <div class="form-group" ng-class="{'has-error': form.password.$error.required && (form.$submitted || form.password.$dirty)}">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-lock fa-fw" aria-hidden="true"></i></span>
+            <input type="password" id="password" name="password" placeholder="Şifre" class="form__input form-control" required minlength="4" maxlength="15" ng-model="vm.credentials.body.password" ng-change="vm.resetError()">
+        </div>
+        <div class="form__meta" ng-show="(form.$submitted || form.password.$dirty) && form.password.$error.required">
+            <span id="password-required-error" ng-show="form.password.$error.required">Şifre alanını boş bırakmayınız.</span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button loading-button type="submit" class="button--login btn btn-default pull-right" text="'Giriş'" loader="vm.loader"></button>
+    </div>
+
+</form>
+<div class="registration__footer">
+    <a href="/admin/forgot">Şifremi unuttum</a>
+</div>
+
+<div class="form-meta mt-10" style="display: inline-block;" ng-if="vm.domains.length>0">
+    Birden fazla domain'de ekli görünüyorsunuz domain seçmeniz gerekmektedir.
+</div>

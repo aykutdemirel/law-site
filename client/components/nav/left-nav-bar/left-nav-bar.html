@@ -1,0 +1,20 @@
+﻿<nav>
+    <div class="menu">
+        <div class="menu-title">
+            <span>MENU</span>
+            <a class="leftSideCloseBtn pull-right">
+                <i class="fa pull-left fa-arrow-left"></i>
+                <span class="menu-close pull-left">Kapat</span>
+            </a>
+        </div>
+
+        <div class="clear"></div>
+        <ul>
+            <li ng-class="{active: vm.active(item.route)}" ng-repeat="item in vm.menu">
+                <a ng-href="{{item.link}}">{{item.title}}</a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+

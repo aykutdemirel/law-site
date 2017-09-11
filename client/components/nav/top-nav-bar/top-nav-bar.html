@@ -1,0 +1,26 @@
+﻿<nav class="navbar navbar-default top-menu header" ng-controller="NavCtrl as vm">
+    <div class="container-fluid">
+        <div class="pull-left">
+            <a class="leftSideBtn">
+                <i class="fa fa-bars pull-left"></i>
+            </a>
+        </div>
+        <div class="logo-panel">
+            <a class="logo" href="/dashboard"><img src="../../assets/img/general/logo.png" /></a>
+        </div>
+
+        <div ncy-breadcrumb class="breadcrumbs hidden-xs"></div>
+
+
+        <div ng-if="vm.user" class="user-menu" uib-dropdown keyboard-nav>
+            <a id="simple-btn-keyboard-nav" class="user-name" uib-dropdown-toggle>
+                <i class="fa fa-user"></i> <span>{{vm.name}} <small>({{vm.userName}})</small></span> <i class="fa fa-angle-down pull-right"></i>
+            </a>
+            <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="simple-btn-keyboard-nav">
+                <li role="menuitem"><a><i class="fa fa-cog"></i> Ayarlar</a></li>
+                <li role="menuitem"><a ng-click="vm.logout()"><i class="fa fa-power-off"></i> Çıkış yap</a></li>
+            </ul>
+        </div>
+         
+    </div>
+</nav>

@@ -1,0 +1,39 @@
+﻿/* variables */
+
+/*Fonts*/
+$openSans: 'Open Sans', sans-serif;
+$Helvatica: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+/*Colors*/
+$white: #fff;
+$black: #000;
+$red: #a94442;
+$dark-red: #e23c18;
+$grey: #b4b4b4;
+$dark_grey: #484848;
+$light_grey: #f1f1f1;
+$blue: #48bdd8;
+$hover_blue: #2979FF;
+$light_blue: #57c2d5;
+$forms_border: #e1e1e1;
+$led_yellow: #efc439;
+$red: #de6b53; 
+$soft-red: #f16344;
+$green: #27d25f;
+$soft-green: #5bff90;
+
+/* Media Style */
+$max-lg: "(max-width : 1200px)";
+$max-md: "(max-width : 992px)";
+$max-sm: "(max-width : 768px)";
+$max-xs: "(max-width : 320px)";
+$max-767: "(max-width : 767px)";
+$max-1260: "(max-width : 1260px)";
+
+$min-xl: "(min-width : 2200px)";
+$min-lg: "(min-width : 1200px)";
+$min-md: "(min-width : 992px)";
+$min-sm: "(min-width : 768px)";
+$min-xs: "(min-width : 320px)";
+
+$spaceamounts: (0, 5, 10, 15, 20, 25, 30, 35, 40);

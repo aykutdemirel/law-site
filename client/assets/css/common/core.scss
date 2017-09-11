@@ -1,0 +1,171 @@
+﻿.txt-white{@include txt-white();}
+.txt-black{@include txt-black();}
+.txt-red{@include txt-red();}
+.txt-grey{@include txt-grey();}
+.txt-dark_grey{@include txt-dark_grey();}
+.txt-light_grey{@include txt-light_grey();}
+.txt-blue{@include txt-blue();}
+
+.bg-white{@include bg-white();}
+.bg-black{@include bg-black();}
+.bg-red{@include bg-red();}
+.bg-grey{@include bg-grey();}
+.bg-dark-red{@include bg-dark-red();}
+.bg-led-yellow{@include bg-led-yellow();}
+.bg-green{@include bg-green();}
+.bg-soft-green{@include bg-soft-green();}
+.bg-dark_grey{@include bg-dark_grey();}
+.bg-light_grey{@include bg-light_grey();}
+.bg-blue{@include bg-blue();}
+.bg-soft-red{@include bg-soft-red();}
+
+/*Margin Style*/
+.no-margin {margin:0 0 0 0!important;}
+@include generate-margin();
+@include generate-margin-top();
+@include generate-margin-right();
+@include generate-margin-bottom();
+@include generate-margin-left();
+.margin-auto{
+    margin: auto!important;
+    float: none!important;
+}
+/*////*/
+/*Padding Style*/
+.no-padding {padding:0 0 0 0!important;}
+@include generate-padding();
+@include generate-padding-top();
+@include generate-padding-right();
+@include generate-padding-bottom();
+@include generate-padding-left();
+
+/*////*/
+/*Font Weight Style*/
+.fw100{font-weight:100!important;}
+.fw200{font-weight:200!important;}
+.fw300{font-weight:300!important;}
+.fw400{font-weight:400!important;}
+.fw500{font-weight:500!important;}
+.fw600{font-weight:600!important;}
+.fw700{font-weight:700!important;}
+.fw900{font-weight:900!important;}
+.bold{font-weight:bold!important;}
+/*////*/
+/*Font Size Style*/
+@for $i from 10 through 55 {
+  .fs-#{$i} { font-size: 0px + $i !important; }
+}
+
+/*////*/
+/*Line Height Style*/
+.lh-normal{line-height: normal!important;}
+
+@for $i from 10 through 55 {
+  .lh-#{$i} { line-height: 0px + $i !important; }
+}
+/*////*/
+/*Letter Spacing Style*/
+.ls-1{letter-spacing:-1px!important;}
+.ls-07{letter-spacing:-0.7px!important;}
+.ls-06{letter-spacing:-0.6px!important;}
+.ls-05{letter-spacing:-0.5px!important;}
+.ls-04{letter-spacing:-0.4px!important;}
+.ls-03{letter-spacing:-0.3px!important;}
+.ls-02{letter-spacing:-0.2px!important;}
+
+/*Border Style*/
+.br-0 { @include border-radius(0); }
+.br-2 { @include border-radius(2px); }
+.br-4 { @include border-radius(4px); }
+.br-6 { @include border-radius(6px); }
+.br-8 { @include border-radius(8px); }
+.br-10 { @include border-radius(10px); }
+
+.vertical-border{border-right:1px solid $grey;}
+.no-border{border:none!important;}
+.border-dashed{border: 1px dashed $grey;}
+.border{border: 1px solid $grey;}
+
+hr{border-color:$grey;}
+
+.container-xs-height {
+	display: table;
+	padding-left: 0;
+	padding-right: 0
+}
+.row-xs-height {
+	display: table-row
+}
+.col-xs-height {
+	display: table-cell;
+	float: none
+}
+.col-top {
+	vertical-align: top !important;
+	height: 100%
+}
+.col-middle {
+	vertical-align: middle
+}
+.col-bottom {
+	vertical-align: bottom
+}
+.col-xs-top {
+	vertical-align: top
+}
+.col-xs-middle {
+	vertical-align: middle
+}
+.col-xs-bottom {
+	vertical-align: bottom
+}
+.table-vertical-middle{
+    td, th{
+        vertical-align:middle!important;
+    }
+}
+.table-vertical-top{
+    td, th{
+        vertical-align:top!important;
+    }
+}
+.table-vertical-bottom{
+    td, th{
+        vertical-align:bottom!important;
+    }
+}
+.overflow-hidden{overflow:hidden;}
+.no-resize{resize:none;}
+/*Postition Style*/
+.relative{position:relative;}
+.absolute{position:absolute;}
+.fixed{position:fixed;}
+.width-full {width:100%;}
+.height-full {height:100%;}
+.display-table { display: table; }
+.display-table-cell { display: table-cell; }
+.vertical-align-middle { vertical-align: middle; }
+.radius-ratio-100 {border-radius: 100%;}
+.dot-3 {white-space: nowrap;overflow:hidden !important;text-overflow: ellipsis;}
+.modal-fs {width: 95%;}
+.text-italic{font-style: italic;}
+.va-top{vertical-align: top;}
+.no-bg {background: none !important; background-color: transparent!important; }
+.smart-city-loader {
+  background: rgba(255, 255, 255, .95);
+  position: absolute;
+  left:0;
+  right:0;
+  bottom: 0;
+  top:0;
+  z-index: 99;
+  .smart-city-loading-gif {
+    width: 55px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin:-27.5px 0 0 -25px;
+  }
+}
+
+

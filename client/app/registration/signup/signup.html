@@ -1,0 +1,75 @@
+<div class="registration registration--animation">
+
+    <form role="form" novalidate name="form" class="form" ng-submit="vm.signup(form)">
+        <!-- Fake fields are a workaround for chrome autofill getting the wrong fields -->
+        <input style="display:none" type="email" name="fakeusernameremembered"/>
+        <input style="display:none" type="password" name="fakepasswordremembered"/>
+
+        <div class="form-group" ng-class="{'has-error': (form.organization.$invalid && (form.$submitted || form.organization.$dirty)) || vm.errors.organization}">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-users fa-fw" aria-hidden="true"></i></span>
+                <input type="text" name="organization" placeholder="Organization or Team" class="form__input form-control"
+                       autofocus
+                       required
+                       maxlength="64"
+                       ui-validate="{ format: 'vm.checkOrganizationFormat($value)' }"
+                       ng-change="vm.resetErrors()"
+                       ng-model="vm.account.organization">
+            </div>
+            <div class="form__meta" ng-show="form.$submitted || form.organization.$dirty">
+                <span id="organization-required-error" ng-show="form.organization.$error.required">Organization is required.</span>
+                <span id="organization-maxLength-error" ng-show="form.organization.$error.maxlength">Organization name is too long.</span>
+                <span id="organization-format-error" ng-show="form.organization.$error.format && !form.organization.$error.required">Organization name can only contain alphanumeric characters, hyphen, dot or underscore. </span>
+                <span id="organization-unique-error" ng-show="vm.errors.organization">Organization with same name already exists.</span>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{'has-error': form.fullName.$invalid && (form.$submitted || form.fullName.$dirty)}">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user fa-fw" aria-hidden="true"></i></span>
+                <input type="text" name="fullName" placeholder="Full Name" class="form__input form-control" required ng-model="vm.account.fullName">
+            </div>
+            <div class="form__meta" ng-show="form.$submitted || form.fullName.$dirty">
+                <span id="fullName-required-error" ng-show="form.fullName.$error.required">Full Name is required.</span>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{'has-error': (form.email.$invalid && (form.$submitted || form.email.$dirty)) || vm.errors.email}">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-envelope fa-fw" aria-hidden="true"></i></span>
+                <input type="email" name="email" placeholder="Email" class="form__input form-control"
+                   autocomplete="off"
+                   required
+                   ng-change="vm.resetErrors()"
+                   ng-model="vm.account.email">
+            </div>
+            <div class="form__meta" ng-show="form.$submitted || form.email.$dirty">
+                <span id="email-required-error" ng-show="form.email.$error.required">Email is required.</span>
+                <span id="email-format-error" ng-show="form.email.$error.email">Invalid email format.</span>
+                <span id="email-unique-error" ng-show="vm.errors.email">Email already exists.</span>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{'has-error': form.password.$invalid && (form.$submitted || form.password.$dirty)}">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-lock fa-fw" aria-hidden="true"></i></span>
+                <input type="password" name="password" placeholder="Password" class="form__input form-control" autocomplete="off" required minlength="6" maxlength="15" ng-model="vm.account.password">
+            </div>
+            <div class="form__meta" ng-show="form.$submitted || form.password.$dirty">
+                <span id="password-required-error" ng-show="form.password.$error.required">Password is required.</span>
+                <span id="password-minLength-error" ng-show="form.password.$error.minlength">Password should be at least 6 characters for your security.</span>
+                <span id="password-maxLength-error" ng-show="form.password.$error.maxlength">Password is too long.</span>
+            </div>
+        </div>
+        <div class="form__group clearfix">
+            <button loading-button type="submit" class="button--login btn btn-default pull-right" text="'Sign Up'" loader="vm.loader"></button>
+        </div>
+        <!-- <div class="form__group">
+          <div class="horizontal-bar">or</div>
+        </div>
+        <div class="form__group">
+          <button type="submit" class="button--github"><i class="fa fa-github"></i> Sign Up with GitHub</button>
+        </div> -->
+    </form>
+    <div class="registration__footer mt-20">
+        Have a smartcity account? <a href="/login">Login</a>
+        <p>By signing up you agree to our <a ng-href="{{vm.urls.terms}}" target="_blank">terms</a> and <a ng-href="{{vm.urls.policy}}" target="_blank">privacy policy</a></p>
+    </div>
+</div>

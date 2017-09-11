@@ -1,0 +1,5 @@
+{
+  "directory": "client/bower_components",
+  "proxy":"",
+  "https-proxy":""
+}

@@ -1,0 +1,16 @@
+<div class="main-inner">
+    <div class="content">
+        <div class="left-sidenav">
+            <left-nav-bar></left-nav-bar>
+        </div>
+        <div class="sidenav-content">
+            <div ng-include="'components/nav/top-nav-bar/top-nav-bar.html'"></div>
+            <div class="container main-container cs-container-fluid">
+                <div class="main-content-wrapper" ui-view="">
+                </div>
+            </div>
+            <div growl></div>
+        </div>
+    </div>
+    <div ng-include="'components/footer/footer.html'"></div>
+</div>

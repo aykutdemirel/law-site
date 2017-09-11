@@ -1,0 +1,52 @@
+{
+  "name": "smartcity",
+  "description": "Smartcity Project",
+  "main": "server/app.js",
+  "authors": [
+    "aykut demirel"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-animate": "~1.4.8",
+    "angular-bootstrap": "~2.5.0",
+    "angular-loading-bar": "~0.7.1",
+    "angular-local-storage": "^0.5.2",
+    "angular-moment": "~0.9.2",
+    "angular-resource": "~1.4.8",
+    "angular-sanitize": "~1.4.8",
+    "angular-simple-logger": "~0.0.2",
+    "angular-socket-io": "~0.7.0",
+    "angular-ui-router": "~0.2.12",
+    "angular-ui-utils": "~0.2.3",
+    "restangular": "^1.5.2",
+    "underscore": "^1.8.3",
+    "bootstrap-sass": "^3.3.7",
+    "jquery": "jQuery#2.1.4",
+    "angular-base64": "^2.0.5",
+    "highcharts": "^5.0.2",
+    "image-scale": "^1.3.2",
+    "stomp-websocket": "^2.3.4",
+    "ng-stomp": "^0.3.0",
+    "ng-file-upload": "^12.2.13",
+    "angular-breadcrumb": "^0.5.0",
+    "is_js": "~0.7.4"
+  },
+  "devDependencies": {},
+  "resolutions": {
+    "angular-ui-utils": "~0.2.3",
+    "restangular": "~1.5.2",
+    "angular-moment": "~0.9.2",
+    "angular-socket-io": "~0.7.0",
+    "angular-loading-bar": "~0.7.1",
+    "angular": "~1.6.5",
+    "jquery": "1.9.1 - 3",
+    "angular-bootstrap": "~2.5.0"
+  }
+}

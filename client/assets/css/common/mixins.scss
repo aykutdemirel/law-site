@@ -1,0 +1,141 @@
+﻿/* mixins */
+
+@mixin font-openSans{font-family:$openSans!important;}
+@mixin font-helvatica{font-family:$Helvatica!important;}
+
+/*Text Colors*/
+@mixin txt-white{color:$white!important;}
+@mixin txt-black{color:$black!important;}
+@mixin txt-red{color:$red!important;}
+@mixin txt-grey{color:$grey!important;}
+@mixin txt-light_grey{color:$light_grey!important;}
+@mixin txt-dark_grey{color:$dark_grey!important;}
+@mixin txt-blue{color:$blue!important;}
+
+/*Background Colors*/
+@mixin bg-white{background-color:$white!important;}
+@mixin bg-black{background-color:$black!important;}
+@mixin bg-red{background-color:$red!important;}
+@mixin bg-dark-red{background-color: $dark-red!important;}
+@mixin bg-led-yellow{background-color: $led_yellow!important;}
+@mixin bg-grey{background-color:$grey!important;}
+@mixin bg-dark_grey{background-color:$dark_grey!important;}
+@mixin bg-light_grey{background-color:$light_grey!important;}
+@mixin bg-blue{background-color:$blue!important;}
+@mixin bg-soft-red{background-color:$soft-red!important;}
+@mixin bg-green{background-color:$green!important;}
+@mixin bg-soft-green{background-color:$soft-green!important;}
+
+
+/**/
+@mixin linearGradient($top, $bottom){
+  background: $top; /* Old browsers */
+  background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  $top 0%,$bottom 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$top, endColorstr=$bottom,GradientType=0 ); /* IE6-9 */
+}
+
+/*min-height*/
+
+@mixin min-height($height) {
+  min-height: $height;
+}
+
+/*border-radius*/
+@mixin border-radius($radius){
+	-webkit-border-radius: $radius!important;
+	-moz-border-radius: $radius!important;
+	-ms-border-radius: $radius!important;
+	border-radius: $radius!important; 
+}
+
+/*Box Shadow*/
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+/*Padding Style*/
+@mixin generate-padding() {
+  @each $space in $spaceamounts {
+    .p-#{$space} {
+      padding: #{$space}px!important;
+    }
+  }
+}
+@mixin generate-padding-top() {
+  @each $space in $spaceamounts {
+    .pt-#{$space} {
+      padding-top: #{$space}px!important;
+    }
+  }
+}
+@mixin generate-padding-right() {
+  @each $space in $spaceamounts {
+    .pr-#{$space} {
+      padding-right: #{$space}px!important;
+    }
+  }
+}
+@mixin generate-padding-bottom() {
+  @each $space in $spaceamounts {
+    .pb-#{$space} {
+      padding-bottom: #{$space}px!important;
+    }
+  }
+}
+@mixin generate-padding-left() {
+  @each $space in $spaceamounts {
+    .pl-#{$space} {
+      padding-left: #{$space}px!important;
+    }
+  }
+}
+
+/*Margin Style*/
+@mixin generate-margin() {
+  @each $space in $spaceamounts {
+    .m-#{$space} {
+      margin: #{$space}px!important;
+    }
+  }
+}
+@mixin generate-margin-top() {
+  @each $space in $spaceamounts {
+    .mt-#{$space} {
+      margin-top: #{$space}px!important;
+    }
+  }
+}
+@mixin generate-margin-right() {
+  @each $space in $spaceamounts {
+    .mr-#{$space} {
+      margin-right: #{$space}px!important;
+    }
+  }
+}
+@mixin generate-margin-bottom() {
+  @each $space in $spaceamounts {
+    .mb-#{$space} {
+      margin-bottom: #{$space}px!important;
+    }
+  }
+}
+@mixin generate-margin-left() {
+  @each $space in $spaceamounts {
+    .ml-#{$space} {
+      margin-left: #{$space}px!important;
+    }
+  }
+}
