@@ -18,6 +18,9 @@ var busboy = require('connect-busboy')
 var useragent = require('express-useragent')
 var path = require('path')
 var config = require('./environment')
+var passport = require('passport');
+require('./models/db');
+require('./config/others/passport');
 
 module.exports = function (app) {
     var env = app.get('env')
@@ -33,6 +36,7 @@ module.exports = function (app) {
     app.set('views', views)
     app.engine('html', require('ejs').renderFile)
     app.set('view engine', 'html')
+
     app.use(compress())
     app.use(useragent.express())
 
@@ -56,14 +60,12 @@ module.exports = function (app) {
         }
     }))
 
-
     // this part is about security
     app.use(csrf())
 
     // error handler for CSRF
     app.use(function (err, req, res, next) {
         if (err.code !== 'EBADCSRFTOKEN') return next(err)
-
         res.status(403).send({ message: 'Invalid CSRF token.' })
     })
 
