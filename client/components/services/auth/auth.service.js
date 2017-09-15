@@ -96,7 +96,7 @@
     function signup (account) {
       var deferred = $q.defer()
       $http
-        .post('/api/registration/signup', account)
+        .post('/api/authentication/register', account)
         .success(function () {
           deferred.resolve()
         })

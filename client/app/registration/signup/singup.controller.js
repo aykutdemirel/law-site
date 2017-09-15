@@ -17,10 +17,6 @@
             organization: false,
             email: false
         }
-        vm.urls = {
-            terms: Settings.website.terms,
-            policy: Settings.website.policy
-        }
 
         vm.loader = {}
 

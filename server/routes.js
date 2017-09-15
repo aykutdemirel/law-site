@@ -9,7 +9,7 @@ var errors = require('./components/errors')
 var jwt = require('express-jwt');
 
 var auth = jwt({
-    secret: 'MY_SECRET',
+    secret: 'A20B9982-F138-49B2-9017-095D055E593B',
     userProperty: 'payload'
 });
 

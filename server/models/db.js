@@ -1,20 +1,29 @@
+'use strict';
+
 var mongoose = require('mongoose');
 var gracefulShutdown;
-var dbURI = 'mongodb://localhost/meanAuth';
+var uri = "mongodb://192.168.1.101:27017/LawSite";
+
 if (process.env.NODE_ENV === 'production') {
-    dbURI = process.env.MONGOLAB_URI;
+    uri = process.env.MONGOLAB_URI;
 }
 
-mongoose.connect(dbURI);
+var opt = {
+    user: 'username',
+    pwd: 'password'
+};
 
-// CONNECTION EVENTS
-mongoose.connection.on('connected', function() {
-    console.log('Mongoose connected to ' + dbURI);
-});
-mongoose.connection.on('error', function(err) {
+var MongoDB = mongoose.connect(uri, opt).connection;
+
+MongoDB.on('error', function (err) {
     console.log('Mongoose connection error: ' + err);
 });
-mongoose.connection.on('disconnected', function() {
+
+MongoDB.once('open', function () {
+    console.log('Mongoose connected to ' + uri);
+});
+
+MongoDB.on('disconnected', function() {
     console.log('Mongoose disconnected');
 });
 
@@ -32,12 +41,14 @@ process.once('SIGUSR2', function() {
         process.kill(process.pid, 'SIGUSR2');
     });
 });
+
 // For app termination
 process.on('SIGINT', function() {
     gracefulShutdown('app termination', function() {
         process.exit(0);
     });
 });
+
 // For Heroku app termination
 process.on('SIGTERM', function() {
     gracefulShutdown('Heroku app termination', function() {
@@ -47,3 +58,5 @@ process.on('SIGTERM', function() {
 
 // BRING IN YOUR SCHEMAS & MODELS
 require('./users');
+
+module.exports = mongoose;

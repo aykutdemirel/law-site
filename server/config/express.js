@@ -18,9 +18,9 @@ var busboy = require('connect-busboy')
 var useragent = require('express-useragent')
 var path = require('path')
 var config = require('./environment')
-var passport = require('passport');
-require('./models/db');
-require('./config/others/passport');
+var passport = require('passport')
+require('./../models/db')
+require('./others/passport')
 
 module.exports = function (app) {
     var env = app.get('env')
@@ -89,6 +89,9 @@ module.exports = function (app) {
         app.use(morgan('dev'))
         app.use(errorHandler()) // error handler has to be last
     }
+
+    // [SH] Initialise Passport before using the route middleware
+    app.use(passport.initialize());
 
     // TODO: move to a separate npm package
     app.use(function (req, res, next) {

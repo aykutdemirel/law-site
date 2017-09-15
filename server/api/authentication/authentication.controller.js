@@ -15,6 +15,7 @@ exports.register = function(req, res) {
 
     user.name = req.body.name;
     user.email = req.body.email;
+
     user.setPassword(req.body.password);
 
     user.save(function(err) {
@@ -30,7 +31,8 @@ exports.register = function(req, res) {
 
 exports.login = function(req, res) {
 
-    passport.authenticate('local', function(err, user, info){
+    passport.authenticate('local', function(err, user, info) {
+
         var token;
 
         // If Passport throws/catches an error
@@ -50,6 +52,7 @@ exports.login = function(req, res) {
             // If user is not found
             res.status(401).json(info);
         }
+
     })(req, res);
 
 };
