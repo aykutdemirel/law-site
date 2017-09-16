@@ -2,7 +2,7 @@
 
 var mongoose = require('mongoose');
 var gracefulShutdown;
-var uri = "mongodb://192.168.1.101:27017/LawSite";
+var uri = "mongodb://localhost:27017/LawSite";
 
 if (process.env.NODE_ENV === 'production') {
     uri = process.env.MONGOLAB_URI;

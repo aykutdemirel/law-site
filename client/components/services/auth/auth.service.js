@@ -93,10 +93,11 @@
      * @param  {Object} account
      * @return {Promise}
      */
-    function signup (account) {
+    function signup (user) {
       var deferred = $q.defer()
+        debugger
       $http
-        .post('/api/authentication/register', account)
+        .post('/api/authentication/register', user)
         .success(function () {
           deferred.resolve()
         })

@@ -7,12 +7,12 @@
         .module('scaffold.app')
         .controller('SignupCtrl', Controller)
 
-    function Controller ($window, $location, Auth, Settings, FormatChecker) {
+    function Controller ($window, $log, $location, Auth, Settings, FormatChecker) {
 
         var vm = this
         var title = 'Sign Up | Scaffold'
 
-        vm.account = {}
+        vm.user = {}
         vm.errors = {
             organization: false,
             email: false
@@ -38,17 +38,18 @@
             vm.resetErrors()
             vm.loader.start()
             // TODO: move login to signup, need backend
-            Auth.signup(vm.account)
-                .then(function () {
-                    Auth.login({ email: vm.account.email, password: vm.account.password })
-                        .then(function () {
-                            vm.loader.success()
-                            $location.url('/admin/apps')
-                        })
-                        .catch(function (err) {
-                            vm.loader.error()
-                            handleError(err)
-                        })
+            Auth.signup(vm.user)
+                .then(function (data) {
+                    $log.info(data)
+                    // Auth.login({  email: vm.account.email, password: vm.account.password })
+                    //     .then(function () {
+                    //         vm.loader.success()
+                    //         $location.url('/admin/apps')
+                    //     })
+                    //     .catch(function (err) {
+                    //         vm.loader.error()
+                    //         handleError(err)
+                    //     })
                 })
                 .catch(function (err) {
                     vm.loader.error()

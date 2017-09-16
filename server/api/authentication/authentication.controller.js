@@ -16,6 +16,10 @@ exports.register = function(req, res) {
     user.name = req.body.name;
     user.email = req.body.email;
 
+    // console.log("req | ", req)
+    // console.log("req body | ", req.body)
+    console.log("user | ", user)
+
     user.setPassword(req.body.password);
 
     user.save(function(err) {
