@@ -8,7 +8,7 @@
 
     // do
     var settings = {
-        url:'/api',
+        url:'/api/',
         tokenName:'scaffold'
     }
 

@@ -38,6 +38,7 @@ exports.login = function(req, res) {
     passport.authenticate('local', function(err, user, info) {
 
         var token;
+        var _user = user;
 
         // If Passport throws/catches an error
         if (err) {
@@ -47,11 +48,15 @@ exports.login = function(req, res) {
 
         // If a user is found
         if(user){
+            console.log('user | ',user)
             token = user.generateJwt();
             res.status(200);
             res.json({
-                "token" : token
+                "token" : token,
+                "user" : _user,
+                "test":"test"
             });
+
         } else {
             // If user is not found
             res.status(401).json(info);

@@ -42,28 +42,15 @@
 
       var cred = angular.copy(credentials)
 
-      cred.body.password = $base64.encode(credentials.body.password)
-
-      if(cred.body.domainRef !== undefined && cred.body.domainRef !==""){
-          cred.url = "/users/user/login"
-      }else{
-          cred.url = "/users/user/admin-login"
-      }
-
-      cred.method = "POST"
-      var deferred = $q.defer()
+        var deferred = $q.defer()
        $http({
-        url: Settings.url + "iam-orchestration-service/iam",
+        url: Settings.url + "authentication/register",
         method: 'POST',
         data: cred,
         headers: { 'Content-Type': 'application/json'}
       }).then(function (data) {
-
-         if( data.data.error !==undefined && (data.data.error.errorCode === "ERR-SCR-03" || data.data.error.errorCode === "ERR-SCR-04")) {
-             deferred.reject();
-             $location.path('/admin/others/user-locked');
-         }
-
+        debugger
+        setCredentials(data)
         deferred.resolve(data)
       }).catch(function (error) {
         console.error(error)
@@ -97,7 +84,7 @@
       var deferred = $q.defer()
         debugger
       $http
-        .post('/api/authentication/register', user)
+        .post(Settings.url + 'authentication/register', user)
         .success(function () {
           deferred.resolve()
         })
@@ -132,7 +119,6 @@
     function requestResetPassword (email) {
         var payload = {}
         payload.body = email.body
-
         payload.url = route + "/forget-password"
         payload.method = "POST"
 
@@ -230,8 +216,8 @@
     function setCredentials (result) {
 
       if (result && result !== {}) {
-        localStorageService.set(Settings.tokenName, result.data.result.token);
-        localStorageService.set(Settings.tokenName+"-user", result.data.result);
+        localStorageService.set(Settings.tokenName, result.data.token);
+        localStorageService.set(Settings.tokenName+"-user", result.data.user);
         PublicApi.refreshHeaders()
         Settings.user = result.data.result
         service.user = result.data.result
