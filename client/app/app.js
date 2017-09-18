@@ -54,7 +54,6 @@
 
             // // dynamic title setting
             document.title = "Hukukbook.com " + $location.path().replaceAll("/"," - ")
-
             if (next.authenticate && !Settings.user) {
                 $location.path('/admin/login')
             }

@@ -9,7 +9,7 @@
     // do
     var settings = {
         url:'/api/',
-        tokenName:'scaffold'
+        tokenName:'hukukbook'
     }
 
     settings.user = localStorage.get(settings.tokenName+"-user")

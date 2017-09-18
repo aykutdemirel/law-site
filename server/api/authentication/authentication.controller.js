@@ -2,6 +2,7 @@
 
 var passport = require('passport');
 var mongoose = require('mongoose');
+var _ = require('underscore-node');
 var User = mongoose.model('User');
 
 var sendJSONresponse = function(res, status, content) {
@@ -38,7 +39,9 @@ exports.login = function(req, res) {
     passport.authenticate('local', function(err, user, info) {
 
         var token;
-        var _user = user;
+        var _user = _.clone(user);
+
+        _user = _.pick(_user, ["name","email"])
 
         // If Passport throws/catches an error
         if (err) {
@@ -48,13 +51,11 @@ exports.login = function(req, res) {
 
         // If a user is found
         if(user){
-            console.log('user | ',user)
             token = user.generateJwt();
             res.status(200);
             res.json({
                 "token" : token,
-                "user" : _user,
-                "test":"test"
+                "user" : _user
             });
 
         } else {
