@@ -53,8 +53,7 @@
         $rootScope.$on('$stateChangeStart', function (event, next) {
 
             // // dynamic title setting
-            document.title = "Hukukbook.com " + $location.path().replaceAll("/"," - ")
-
+            document.title = "HukukBook.com " + $location.path().replaceAll("/"," - ")
             if (next.authenticate && !Settings.user) {
                 $location.path('/admin/login')
             }

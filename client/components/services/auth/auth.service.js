@@ -44,12 +44,11 @@
 
         var deferred = $q.defer()
        $http({
-        url: Settings.url + "authentication/register",
+        url: Settings.url + "authentication/login",
         method: 'POST',
         data: cred,
         headers: { 'Content-Type': 'application/json'}
       }).then(function (data) {
-        debugger
         setCredentials(data)
         deferred.resolve(data)
       }).catch(function (error) {
@@ -82,7 +81,6 @@
      */
     function signup (user) {
       var deferred = $q.defer()
-        debugger
       $http
         .post(Settings.url + 'authentication/register', user)
         .success(function () {
@@ -219,8 +217,8 @@
         localStorageService.set(Settings.tokenName, result.data.token);
         localStorageService.set(Settings.tokenName+"-user", result.data.user);
         PublicApi.refreshHeaders()
-        Settings.user = result.data.result
-        service.user = result.data.result
+        Settings.user = result.data.user
+        service.user = result.data.user
       }
     }
 

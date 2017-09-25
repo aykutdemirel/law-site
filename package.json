@@ -31,7 +31,8 @@
     "randomstring": "^1.0.5",
     "request": "^2.60.0",
     "rimraf": "^2.3.2",
-    "serve-favicon": "^2.2.0"
+    "serve-favicon": "^2.2.0",
+    "underscore-node": "^0.1.2"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",

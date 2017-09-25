@@ -10,7 +10,7 @@
     function Controller ($window, $location, $stateParams, Auth) {
 
         var vm = this
-        var title = 'Login | Scaffold'
+        var title = 'Login | HukukBook'
 
         vm.credentials = { body : { email:'',password:''} }
 
@@ -43,7 +43,7 @@
             vm.loader.start()
             Auth
                 .login(vm.credentials.body)
-                .then(function (data) {
+                .then(function (result) {
                     vm.loader.success()
                     $location.path('/admin/dashboard')
                 })
