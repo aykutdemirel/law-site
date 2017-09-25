@@ -34,12 +34,12 @@ module.exports = function (grunt) {
         },
         express: {
             options: {
-                port: process.env.PORT || 9000
+                port: process.env.PORT || 8000
             },
             dev: {
                 options: {
                     script: 'server/app.js',
-                    debug: true
+                    debug: false
                 }
             },
             prod: {
