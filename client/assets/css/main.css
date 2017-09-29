@@ -930,7 +930,8 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: sans-serif; }
+  font-size: 100%;
+  font-family: sans-serif !important; }
 
 body {
   background-color: #f6f6f6; }
@@ -1081,6 +1082,30 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.5em;
     margin-top: 1em; }
 
+#toc #toctitle, .toc #toctitle, #toc .toctitle, .toc .toctitle {
+  text-align: center; }
+
+#toc ul, .toc ul {
+  list-style-type: none;
+  list-style-image: none;
+  margin-left: 0;
+  padding: 0;
+  text-align: left; }
+
+#toc ul, .toc ul {
+  margin: 0.3em 0; }
+
+#toc h2, .toc h2 {
+  display: inline;
+  border: 0;
+  padding: 0;
+  font-size: 100%;
+  font-weight: bold; }
+
+.mw-body-content #toc h2, .mw-body-content .toc h2 {
+  font-size: 100%;
+  font-family: sans-serif; }
+
 #siteSub {
   display: inline;
   font-size: 92%;
@@ -1099,7 +1124,16 @@ h1, h2, h3, h4, h5, h6 {
   clear: right;
   text-align: left;
   font-size: 88%;
-  line-height: 1.5em; }
+  line-height: 1.5em;
+  border-collapse: separate; }
+  .infobox th, .infobox td {
+    padding: 2px; }
+
+a.new:visited, #p-personal a.new:visited {
+  color: #a55858; }
+
+a.new, #p-personal a.new {
+  color: #ba0000; }
 
 #toc, .toc, .mw-warning, .toccolours {
   border: 1px solid #a2a9b1;
@@ -1131,11 +1165,89 @@ div.tright {
   border: none;
   margin: 0.5em 0 0.8em 1.4em; }
 
+div.tleft, div.floatleft, table.floatleft {
+  float: left;
+  clear: left; }
+
+div.tleft {
+  margin: 0.5em 1.4em 1.3em 0; }
+
+div.tleft {
+  border: none;
+  margin: 0.5em 1.4em 0.8em 0; }
+
+div.thumbinner {
+  border: 1px solid #c8ccd1;
+  padding: 3px;
+  background-color: #f8f9fa;
+  font-size: 94%;
+  text-align: center;
+  overflow: hidden;
+  box-sizing: content-box; }
+
+.thumbinner {
+  min-width: 100px; }
+
+html .thumbimage {
+  background-color: #fff;
+  border: 1px solid #c8ccd1; }
+
+html .thumbcaption {
+  border: 0;
+  line-height: 1.4em;
+  padding: 3px;
+  font-size: 94%;
+  text-align: left; }
+
+.mw-content-ltr {
+  direction: ltr; }
+
+.mw-content-ltr .thumbcaption {
+  text-align: left; }
+
+.mw-content-ltr .thumbcaption {
+  text-align: left; }
+
 th.summary {
   background-color: #B0C4DE;
   text-align: center;
   vertical-align: middle;
   font-size: 110%; }
+
+div.NavFrame {
+  margin: 0;
+  padding: 4px;
+  border: 1px solid #aaa;
+  text-align: center;
+  border-collapse: collapse;
+  font-size: 95%; }
+
+div.NavFrame + div.NavFrame {
+  border-top-style: none;
+  border-top-style: hidden; }
+
+div.NavFrame div.NavHead {
+  height: 1.6em;
+  font-weight: bold;
+  background-color: #ccf;
+  position: relative; }
+
+a.NavToggle {
+  position: absolute;
+  top: 0;
+  right: 3px;
+  font-weight: normal;
+  font-size: 90%; }
+
+div.NavFrame p, div.NavFrame div.NavContent, div.NavFrame div.NavContent p {
+  font-size: 100%; }
+
+.mw-content-ltr ul, .mw-content-rtl .mw-content-ltr ul {
+  margin: 0.3em 0 0 1.6em;
+  padding: 0; }
+
+#content ol, #content ul, #mw_content ol, #mw_content ul {
+  margin-bottom: 0em; }
 
 div#mw-panel {
   font-size: inherit;
